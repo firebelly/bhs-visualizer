@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Barbershop Visualizer 0.23 (UI overhaul round 2 -- APPROVED)</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <h2 class="snuggle">Animation:</h2>
+<div id="stage">
+  <canvas id="animation" width="1920" height="1080">
+</div>
+<h2 class="snuggle">Analysis:</h2>
+<div class="controls hidden">
+  <div>
+    
+    <h2 class="controls-toggle">Controls <span class="open">&#9650;</span><span class="close">&#9660;</span></h2>
+    <div class="status">Welcome to the BHS Audio Visualization Videomatic!</div>
+    <p><span class="number step-1">1.</span> Choose a song or load your own.</p>
+    <button class="load-song" data-song="/audio/hello.mp3">"Hello"</button>
+    <button class="load-song" data-song="/audio/o-canada.mp3">"Oh Canada"</button>
+    <button class="load-song" data-song="/audio/light-up-your-life.mp3">"Light Up Your Life"</button>
+    <button class="load-song" data-song="/audio/let-me-call-you-sweetheart.mp3">"Let Me Call You Sweetheart"</button>
+    <button class="load-song" data-song="/audio/sing-out.mp3">"Sing Out"</button>
+    <input type="file" id="song-upload" class="button">
+  </div>
+  <div>
+    <p><span class="number step-2">2.</span> Choose a color scheme.</p>
+    <button class="randomize-colors-button customizer">Randomize Colors</button>
+    <button class="reset-colors-button customizer">Reset Colors</button>a
+  </div>
+  <div>
+    <p><span class="number step-3">3.</span> Preview and export.</p>
+    <button class="abort-button utility">Stop Here</button>
+    <button class="preview-button utility">Preview Animation</button>
+    <button class="rec-button utility">Export To 1080p .webm Video</button>
+    <p><span class="number step-4">4.</span> Convert .webm file to whatever video format you like.  <a href="https://handbrake.fr" target="_blank">Handbrake</a> is a great free tool.</p>
+  </div>
+</div>
+<script src='/js/p5.min.js'></script>
+<script src='/js/p5.sound.min.js'></script>
+<script src='/js/jquery.min.js'></script>
+<script src='/js/ccapture.js'></script>
+<script src='/js/math.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

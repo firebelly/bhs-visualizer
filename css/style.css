@@ -1,0 +1,196 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+canvas {
+  width: 98vw;
+  background: gray;
+  border: 2px solid black;
+  margin-bottom: 1vw;
+}
+
+.controls {
+  left: 0;
+  top: 100%;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.controls.hidden {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+.controls p, .controls h2 {
+  font-weight: bold;
+  color: white;
+}
+.controls h2 {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 0;
+}
+.controls p {
+  margin-bottom: 10px;
+}
+.controls p, .controls button, .controls .button {
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+.controls.loading p, .controls.loading button, .controls.loading .button {
+  -webkit-transition: opacity 0.2s 0.3s;
+  transition: opacity 0.2s 0.3s;
+  opacity: .1;
+  pointer-events: none;
+}
+.controls.previewing button.abort-button, .controls.previewing .button.abort-button {
+  display: inline-block;
+  opacity: 1;
+  pointer-events: auto;
+}
+.controls.previewing .status, .controls.recording .status {
+  -webkit-transform: none;
+          transform: none;
+  background-color: #ddd;
+}
+.controls.previewing p, .controls.previewing button, .controls.previewing .button, .controls.recording p, .controls.recording button, .controls.recording .button {
+  display: none;
+}
+.controls.previewing .controls-toggle, .controls.recording .controls-toggle {
+  display: none;
+}
+.controls .abort-button {
+  display: none;
+  float: right;
+}
+
+button, .button {
+  padding: 5px;
+  color: black;
+  background: white;
+  text-decoration: none;
+  margin: 0 10px 10px 0;
+  border: 2px solid black;
+  outline: none;
+}
+button:hover, .button:hover {
+  cursor: pointer;
+  background: #ccc;
+}
+button.utility, .button.utility {
+  background: yellow;
+}
+button.utility:hover, .button.utility:hover {
+  background: gold;
+}
+button.customizer, .button.customizer {
+  background: pink;
+}
+button.customizer:hover, .button.customizer:hover {
+  background: magenta;
+}
+button.highlight, .button.highlight {
+  border-color: red;
+}
+
+.status {
+  text-align: center;
+  padding: 10px;
+  background: #ddd;
+  margin-bottom: 40px;
+  -webkit-transition: background-color 1s, -webkit-transform 1s;
+  transition: background-color 1s, -webkit-transform 1s;
+  transition: background-color 1s, transform 1s;
+  transition: background-color 1s, transform 1s, -webkit-transform 1s;
+}
+.status.alert {
+  -webkit-transition: background-color 0.1s, -webkit-transform 0.1s;
+  transition: background-color 0.1s, -webkit-transform 0.1s;
+  transition: background-color 0.1s, transform 0.1s;
+  transition: background-color 0.1s, transform 0.1s, -webkit-transform 0.1s;
+  background: yellow;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.spectrogram {
+  opacity: 0.8;
+  margin-top: 0;
+  background: black;
+}
+.spectrogram.disabled {
+  display: none;
+}
+
+body {
+  font-size: 12px;
+  padding: 1vw 1vw 400px 1vw;
+}
+
+h2.snuggle {
+  z-index: 1;
+  position: absolute;
+  left: 2vw;
+  margin: 0;
+  padding-top: 8px;
+  font-size: 12px;
+  font-weight: black;
+  color: white;
+}
+
+a {
+  color: yellow;
+}
+a:hover {
+  color: gold;
+}
+
+.number {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.number:before {
+  content: '✓ ';
+  font-size: 0;
+  opacity: 0;
+  -webkit-transition: font-size 0.2s, opacity 0.2s;
+  transition: font-size 0.2s, opacity 0.2s;
+}
+.number.done:before {
+  content: '✓ ';
+  font-size: 30px;
+  opacity: 1;
+}
+
+.controls-toggle {
+  color: white;
+}
+.controls-toggle:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.controls .close {
+  display: inline;
+}
+.controls .open {
+  display: none;
+}
+.controls.hidden .close {
+  display: none;
+}
+.controls.hidden .open {
+  display: inline;
+}
