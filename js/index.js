@@ -482,7 +482,7 @@ function initGui () {
   $('.randomize-colors-button').click(function() {
     randomizeColors();
     
-    updateStatus('Colors randomized.  How do I look?');
+    updateStatus('Colors randomized.  Now preview and export!');
     
     // Add checkmark
     $('.step-2').addClass('done');
